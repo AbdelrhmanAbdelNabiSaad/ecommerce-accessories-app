@@ -581,7 +581,8 @@ function renderFavoriteItems() {
   if(!favoriteItemsContainer) return;
 
   if(favorites.length === 0) {
-    favoriteItemsContainer.innerHTML = `<p class="text-center">You have no favorite items.</p>`;
+    favoriteItemsContainer.classList.remove('grid');
+    favoriteItemsContainer.innerHTML = `<h1 class="text-center">You have no favorite items.</h1>`;
     return;
   }
 
@@ -611,7 +612,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if(loggedUser && isLoggedIn) {
     loggedIn = true;
-    document.querySelector('#usernameDisplay').textContent = `Hello, ${loggedUser.firstName}`;
+    const username = document.querySelector(`#username`);
+    if(!username)return;
+    username.textContent = `Hello, ${loggedUser.firstName}`;
   }else {
     loggedIn = false;
   }
