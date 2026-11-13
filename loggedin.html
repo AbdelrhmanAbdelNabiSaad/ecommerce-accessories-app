@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoggendIn</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Start Navbar -->
+    <nav class="navbar md:navbar-expand bg-1">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./img/E__3_-removebg-preview.png" alt="logo" height="80" />
+        </a>
+        <ul class="nav navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <span id="usernameDisplay" class="ms-3 me-3">Hi, Abdelrhman</span>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link"
+              type="button"
+              data-bs-toggle="menu"
+              aria-expanded="false"
+            >
+              <a href="#" class="nav-link"
+                ><i class="fas fa-shopping-cart"></i>
+                <span id="cartCount">0</span></a
+              >
+            </button>
+            <div class="menu text-center">
+              <div class="menu-item d-flex flex-column" id="cartDropdownItems">
+                
+              </div>
+                <hr class="menu-divider">
+              <a href="./cart.html" class="menu-item mx-auto text-center d-block">View All Products</a>
+            </div>
+          </li>
+          <button
+            class="btn btn-outline theme-danger"
+            onclick="logout()"
+          >
+            Logout
+          </button>
+        </ul>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+         <!-- Start Search -->
+    <div class="container mt-10">
+      <div class="row gap-5">
+        <div class="col-3">
+          <div class="form-field">
+            <select class="form-control" id="searchType">
+              <option hidden>Search Product</option>
+              <option value="name">Search by Product Name</option>
+              <option value="category">Search by Product Category</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-field">
+            <input
+              type="text"
+              id="searchBox"
+              placeholder="Search Product Name or Category"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-solid theme-warning w-100" onclick="searchProducts()">Search</button>
+        </div>
+      </div>
+    </div>
+    <!-- End Search -->
+         <!-- Start Products -->
+    <div class="container container-products mt-10" id="products-container">
+      <div class="grid text-center grid-cols-4 " id="proucts-grid">
+        
+        <!-- <div class="">
+          <div class="card" >
+            <img src="./img/2809f6567a8309c00022f8e273d8715c.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card’s content.
+              </p>
+              <a href="#" class="btn-solid theme-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card" >
+            <img src="./img/2809f6567a8309c00022f8e273d8715c.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card’s content.
+              </p>
+              <a href="#" class="btn-solid theme-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card" >
+            <img src="./img/2809f6567a8309c00022f8e273d8715c.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card’s content.
+              </p>
+              <a href="#" class="btn-solid theme-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <!-- End Products -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

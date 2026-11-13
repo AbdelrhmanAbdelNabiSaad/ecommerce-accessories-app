@@ -1,0 +1,27 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+.register-container{
+    background-color:light-dark(
+    color-mix(in oklch, #fff 94%, oklch(60% .02 245)),
+    color-mix(in oklch, #000 70%, oklch(60% .02 245))
+  );;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.register-container .form-field .form-control:focus {
+    outline-color: 	oklch(88% .24 88);
+}
+@media(max-width: 767px) {
+    .register-container .row {
+        flex-direction: column;
+    }
+    .register-container .row .form-field {
+        width: 100%;
+    }
+    .register-container .row .form-field:nth-child(2) {
+        margin-block-start: 1rem;
+    }
+}

@@ -1,0 +1,9 @@
+.login-container {
+    background-color:light-dark(
+    color-mix(in oklch, #fff 94%, oklch(60% .02 245)),
+    color-mix(in oklch, #000 70%, oklch(60% .02 245))
+  );;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

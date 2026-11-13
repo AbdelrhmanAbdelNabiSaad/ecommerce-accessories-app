@@ -1,0 +1,40 @@
+span::before {
+    content: '' !important;
+}
+#cart-items img,
+#favorite-items img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#favorite-items .card i {
+    font-size: 30px;
+    cursor: pointer;
+}
+#favorite-items .card i.fa-heart.active {
+    color: red;
+}
+@media(max-width: 991px) {
+    .grid {
+        grid-template-columns: 100%;
+    }
+}
+@media(max-width: 576px) {
+    .grid .card {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .grid .card img {
+        width: 100% !important;
+        height: 450px !important;
+    }
+    .grid .card button.theme-danger {
+        display: block;
+        width: 100%;
+    }
+}
