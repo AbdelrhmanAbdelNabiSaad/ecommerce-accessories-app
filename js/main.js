@@ -113,7 +113,7 @@ const products = [
 ];
 
 function renderProducts(productList) {
-  const productsGrid = document.querySelector("#proucts-grid");
+  const productsGrid = document.querySelector("#products-grid");
 
   if (!productsGrid) return;
 
