@@ -20,7 +20,7 @@ const products = [
     400,
     "Watches",
     "women",
-    "../img/2809f6567a8309c00022f8e273d8715c.jpg",
+    "./img/2809f6567a8309c00022f8e273d8715c.jpg",
   ),
   new Product(
     2,
@@ -28,7 +28,7 @@ const products = [
     150,
     "Necklace",
     "men",
-    "../img/686d4a051c21359b7577ee191b02fb70.jpg",
+    "./img/686d4a051c21359b7577ee191b02fb70.jpg",
   ),
   new Product(
     3,
@@ -36,7 +36,7 @@ const products = [
     200,
     "Earrings",
     "women",
-    "../img/6f5d807b3ac44d8f5fdf2d94f7929177.jpg",
+    "./img/6f5d807b3ac44d8f5fdf2d94f7929177.jpg",
   ),
   new Product(
     4,
@@ -44,7 +44,7 @@ const products = [
     350,
     "Watches",
     "men",
-    "../img/a959c27ca359e1fc2c5453411253d1ad.jpg",
+    "./img/a959c27ca359e1fc2c5453411253d1ad.jpg",
   ),
   new Product(
     5,
@@ -52,7 +52,7 @@ const products = [
     580,
     "Rings",
     "women",
-    "../img/dd94301efd4caef4e84229be9a74bf90.jpg",
+    "./img/dd94301efd4caef4e84229be9a74bf90.jpg",
   ),
   new Product(
     6,
@@ -60,7 +60,7 @@ const products = [
     150,
     "Necklace",
     "men",
-    "../img/3ca518ac387b3e07aaf503b2c1399707.jpg",
+    "./img/3ca518ac387b3e07aaf503b2c1399707.jpg",
   ),
   new Product(
     7,
@@ -68,7 +68,7 @@ const products = [
     100,
     "Bracelet",
     "men",
-    "../img/ef169eeb1097eaa0cd21f0311524820e.jpg",
+    "./img/ef169eeb1097eaa0cd21f0311524820e.jpg",
   ),
   new Product(
     8,
@@ -76,7 +76,7 @@ const products = [
     500,
     "Necklace",
     "women",
-    "../img/9f5a4002bc9bdda21f05e47dc80a38df.jpg",
+    "./img/9f5a4002bc9bdda21f05e47dc80a38df.jpg",
   ),
   new Product(
     9,
@@ -84,7 +84,7 @@ const products = [
     300,
     "Bracelet",
     "women",
-    "../img/2a384379039c5e05bd5905edc657e93c.jpg",
+    "./img/2a384379039c5e05bd5905edc657e93c.jpg",
   ),
   new Product(
     10,
@@ -92,7 +92,7 @@ const products = [
     400,
     "Watches",
     "women",
-    "../img/2809f6567a8309c00022f8e273d8715c.jpg",
+    "./img/2809f6567a8309c00022f8e273d8715c.jpg",
   ),
   new Product(
     11,
@@ -100,7 +100,7 @@ const products = [
     150,
     "Necklace",
     "men",
-    "../img/686d4a051c21359b7577ee191b02fb70.jpg",
+    "./img/686d4a051c21359b7577ee191b02fb70.jpg",
   ),
   new Product(
     12,
@@ -108,7 +108,7 @@ const products = [
     200,
     "Earrings",
     "women",
-    "../img/6f5d807b3ac44d8f5fdf2d94f7929177.jpg",
+    "./img/6f5d807b3ac44d8f5fdf2d94f7929177.jpg",
   ),
 ];
 
