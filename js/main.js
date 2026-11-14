@@ -264,7 +264,8 @@ function updateCartCount() {
 
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
 
-  document.querySelector("#cartCount").textContent = cartCount;
+  const cartCountEl = document.querySelector("#cartCount");
+  if (cartCountEl) cartCountEl.textContent = cartCount;
 }
 
 
@@ -300,7 +301,7 @@ function toggleFavorite(productId) {
 
   renderProducts(products);
 
-  if(window.location.includes('cart.html')) renderFavoriteItems();
+  if(window.location.href.includes('cart.html')) renderFavoriteItems();
 }
 
 // Function Remove The Cart Favorite
@@ -352,6 +353,7 @@ function updateCartDropdown() {
   const cartItems = products.filter((product) => product.isInCart);
   console.log(cartItems);
   const cartDropdownItems = document.querySelector("#cartDropdownItems");
+  if (!cartDropdownItems) return;
   cartDropdownItems.innerHTML = "";
   if (cartItems.length === 0) {
     cartDropdownItems.innerHTML = `<p class="text-center">Your Cart Is Empty</p>`;
@@ -394,14 +396,8 @@ function increaseQuantity(productId) {
 
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  document.querySelector(`#itemQuantity${productId}`).textContent =
-    product.quantity;
-
-  document.querySelector(`#itemPrice${productId}`).textContent =
-    product.price * product.quantity;
-
   updateCartDropdown();
-  renderCartItems()
+  renderCartItems();
 }
 
 function decreaseQuantity(productId) {
@@ -432,7 +428,7 @@ function decreaseQuantity(productId) {
         productCartButton.classList.add("theme-warning");
       }
 
-      const cartItemCard = document.querySelector(`cart-items .card[data-product-id="${productId}"]`);
+      const cartItemCard = document.querySelector(`#cart-items .card[data-product-id="${productId}"]`);
 
       if(cartItemCard) {
         cartItemCard.remove();
@@ -448,11 +444,6 @@ function decreaseQuantity(productId) {
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    document.querySelector(`#itemQuantity${productId}`).textContent =
-      product.quantity;
-
-    document.querySelector(`#itemPrice${productId}`).textContent =
-      product.price * product.quantity;
     updateCartDropdown();
     renderCartItems();
     updateTotalPrice();
@@ -490,17 +481,20 @@ function renderCartItems() {
   const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
   const cartItemsContainer = document.querySelector(`#cart-items`);
-  console.log(cartItemsContainer);
-  
+  if (!cartItemsContainer) return;
+
   cartItemsContainer.innerHTML = ``;
 
   if(cartItems.length === 0) {
+    updateTotalPrice();
     cartItemsContainer.classList.remove('grid')
     cartItemsContainer.innerHTML = `<h1 class="text-center">Your cart is empty</h1>`;
 
     return;
 
   }
+
+  cartItemsContainer.classList.add('grid');
 
   const cartItemsHTML = cartItems.map(item => `
    <div class="">
@@ -544,7 +538,8 @@ function updateTotalPrice() {
 
   const totalPrice = products.filter(product=> product.isInCart).reduce((total,product)=> total + product.price * product.quantity,0);
 
-  document.querySelector('#totalPrice').textContent = totalPrice.toFixed(2);
+  const totalEl = document.querySelector('#totalPrice');
+  if (totalEl) totalEl.textContent = totalPrice.toFixed(2);
 
 }
 
@@ -566,8 +561,6 @@ function removeFromCart(productId) {
 
     updateTotalPrice();
 
-    document.querySelector(`#cart-items .card[data-product-id="${productId}"]`).remove();
-
   }
 
 }
@@ -580,15 +573,19 @@ function renderFavoriteItems() {
 
   if(!favoriteItemsContainer) return;
 
+  favoriteItemsContainer.innerHTML = '';
+
   if(favorites.length === 0) {
     favoriteItemsContainer.classList.remove('grid');
     favoriteItemsContainer.innerHTML = `<h1 class="text-center">You have no favorite items.</h1>`;
     return;
   }
 
+  favoriteItemsContainer.classList.add('grid');
+
   const favoriteItemsHTML = favorites.map(item => `
     <div>
-      <div class="card d-flex flex-row align-items-start card-fav" data-product-id="">
+      <div class="card d-flex flex-row align-items-start card-fav" data-product-id="${item.id}">
             <img src="${item.image}" class="card-img-top" alt="${item.name}">
             <div class="card-body">
               <h5 class="card-title">${item.name}</h5>
@@ -612,9 +609,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if(loggedUser && isLoggedIn) {
     loggedIn = true;
-    const username = document.querySelector(`#username`);
-    if(!username)return;
-    username.textContent = `Hello, ${loggedUser.firstName}`;
+    const username = document.querySelector(`#usernameDisplay`);
+    if(username) username.textContent = `Hello, ${loggedUser.firstName}`;
   }else {
     loggedIn = false;
   }
